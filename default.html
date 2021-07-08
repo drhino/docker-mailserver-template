@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Docker Mailserver</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<!--
+<link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
+-->
+<link rel="icon" href="/favicon.ico">
+<link rel="mask-icon" href="/dmo-logo-white.min.svg" color="#4051b5">
+<meta name="theme-color" content="#4051b5">
+
+<style>
+  body { background-color: #4051b5 }
+  main { max-width: 330px }
+  .text-white-25 { color: rgba(255,255,255,.25) }
+</style>
+
+</head>
+<body class="d-flex align-items-center h-100">
+
+<main class="w-100 px-3 mx-auto">
+<!-- https://docker-mailserver.github.io/docker-mailserver/edge/assets/logo/dmo-logo-white.min.svg -->
+  <img alt="Docker Mailserver logo" width="44" height="44" id="logo" src="/dmo-logo-white.min.svg">
+  <h1 class="h4 mt-2 mb-1 fw-normal text-light" id="title">Please sign in.</h1>
+  <code class="text-white-50" id="message">Welcome to your mailserver.</code>
+  <a class="w-100 btn btn-dark mt-3" id="button" href="/?login">Sign in</a>
+  <div class="mt-3"><small class="text-white-25">&copy; 2021-<span id="year">2021</span></small></div>
+</main>
+
+<script id="ServiceUnavailable">
+  const ServiceUnavailable = seconds => {
+    const message = document.getElementById('message')
+    const reason = 'Unable to contact API server'
+    const retry = '<br>Retry in ' // 9s
+
+    let dots = ''
+    seconds--
+    //message.innerHTML = reason + retry + seconds + 's'
+
+    setInterval(() => {
+      seconds--
+      dots = (dots.length === 3 || 0 === seconds) ? '' : dots + '.'
+      if (-1 === seconds) window.location.reload()
+      else message.innerHTML = reason + dots + retry + (seconds ? seconds + 's' : '-')
+    }, 1000)
+  }
+
+  //ServiceUnavailable(10)
+</script>
+
+</body>
+</html>
