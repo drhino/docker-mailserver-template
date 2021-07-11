@@ -1,0 +1,81 @@
+body {
+/*background-color: #4051b5;*/
+/*background-color: #00299e;*/
+  background-color: #18289c; /* blue */
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+   sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#container {
+  margin: 0 auto;
+  height: 100vh;
+  min-width: 320px;
+  display: table;
+}
+
+#valign {
+  padding: 1.5rem 25px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#valign, #reason, #message { transition: opacity .5s; }
+
+#button, #logo, small { display: block; }
+#button, #reason      { color: #f8f9fa; } /* white */
+#button, small        { font-size: .75em; margin-top: 1rem; }
+
+small { color: rgba(255,255,255,.3); }
+
+#reason {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin: .5rem 0 0 0;
+}
+
+#message {
+  font-size: 1.05em;
+  line-height: 1.2;
+  margin: .25rem 0 -.1rem 0;
+  direction: ltr;
+  unicode-bidi: bidi-override;
+  color: rgba(255,255,255,.45);
+}
+
+#button {
+  text-decoration: none;
+  padding: .75rem 0;
+  border-radius: .25rem;
+  background-color: #1a1e21;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  max-width: 270px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  transition: background-color .15s, box-shadow .15s,
+  padding .5s, font-size .5s, color .25s, filter .5s;
+}
+#button:hover, #button:active { background-color: #161719; }
+#button:focus {
+  background-color: #000;
+  outline: 0;
+  box-shadow: 0 0 0 .25rem rgb(66 70 73 / 50%);
+}
+
+#logo {
+  position: relative;
+  animation-duration: .3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-name: moby;
+  top: 0;
+}
+@keyframes moby { to {
+  top: -.5rem;
+  transform: rotate(-7.5deg);
+} }
