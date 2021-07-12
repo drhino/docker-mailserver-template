@@ -1,13 +1,18 @@
 body {
-/*background-color: #4051b5;*/
 /*background-color: #00299e;*/
   background-color: #18289c; /* blue */
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-   sans-serif;
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: transparent;
+  font-family: system-ui, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
 }
+
+hr { display: none; }
+small { color: rgba(255,255,255,.3); }
+
+#button, small, #logo       { display: block;     }
+#button, small              { font-size: .75em;   }
+#button, small, #traceError { margin-top: 1rem;   }
+#button, #traceTitle        { color: #f8f9fa;     } /* white */
+         #traceRetry        { margin-top: .25rem; }
 
 #container {
   margin: 0 auto;
@@ -20,29 +25,21 @@ body {
   padding: 1.5rem 25px;
   display: table-cell;
   vertical-align: middle;
+  transition: opacity .5s;
 }
 
-#valign, #reason, #message { transition: opacity .5s; }
-
-#button, #logo, small { display: block; }
-#button, #reason      { color: #f8f9fa; } /* white */
-#button, small        { font-size: .75em; margin-top: 1rem; }
-
-small { color: rgba(255,255,255,.3); }
-
-#reason {
+#traceTitle {
   font-size: 1.5em;
   font-weight: 400;
   margin: .5rem 0 0 0;
+  transition: color .25s, filter .5s;
 }
 
-#message {
-  font-size: 1.05em;
-  line-height: 1.2;
-  margin: .25rem 0 -.1rem 0;
+#traceError {
   direction: ltr;
   unicode-bidi: bidi-override;
   color: rgba(255,255,255,.45);
+  transition: color .25s;
 }
 
 #button {
@@ -54,11 +51,8 @@ small { color: rgba(255,255,255,.3); }
   text-transform: uppercase;
   letter-spacing: .1rem;
   max-width: 270px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
   user-select: none;
-  transition: background-color .15s, box-shadow .15s,
-  padding .5s, font-size .5s, color .25s, filter .5s;
+  transition: background-color .15s, box-shadow .15s, color .25s, filter .5s;
 }
 #button:hover, #button:active { background-color: #161719; }
 #button:focus {
@@ -67,12 +61,24 @@ small { color: rgba(255,255,255,.3); }
   box-shadow: 0 0 0 .25rem rgb(66 70 73 / 50%);
 }
 
+#valign.leave { opacity: 0; }
+#valign.leave #button,
+#valign.leave #traceTitle,
+#traceTitle.animate,
+#button.animate {
+  color: transparent;
+  filter: blur(.5rem);
+}
+#traceError.animate {
+  color: transparent;
+}
+
 #logo {
-  position: relative;
   animation-duration: .3s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-name: moby;
+  position: relative;
   top: 0;
 }
 @keyframes moby { to {
