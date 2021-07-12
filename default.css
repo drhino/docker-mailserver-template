@@ -1,0 +1,87 @@
+body {
+/*background-color: #00299e;*/
+  background-color: #18289c; /* blue */
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+hr { display: none; }
+small { color: rgba(255,255,255,.3); }
+
+#button, small, #logo       { display: block;     }
+#button, small              { font-size: .75em;   }
+#button, small, #traceError { margin-top: 1rem;   }
+#button, #traceTitle        { color: #f8f9fa;     } /* white */
+         #traceRetry        { margin-top: .25rem; }
+
+#container {
+  margin: 0 auto;
+  height: 100vh;
+  min-width: 320px;
+  display: table;
+}
+
+#valign {
+  padding: 1.5rem 25px;
+  display: table-cell;
+  vertical-align: middle;
+  transition: opacity .5s;
+}
+
+#traceTitle {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin: .5rem 0 0 0;
+  transition: color .25s, filter .5s;
+}
+
+#traceError {
+  direction: ltr;
+  unicode-bidi: bidi-override;
+  color: rgba(255,255,255,.45);
+  transition: color .25s;
+}
+
+#button {
+  text-decoration: none;
+  padding: .75rem 0;
+  border-radius: .25rem;
+  background-color: #1a1e21;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  max-width: 270px;
+  user-select: none;
+  transition: background-color .15s, box-shadow .15s, color .25s, filter .5s;
+}
+#button:hover, #button:active { background-color: #161719; }
+#button:focus {
+  background-color: #000;
+  outline: 0;
+  box-shadow: 0 0 0 .25rem rgb(66 70 73 / 50%);
+}
+
+#valign.leave { opacity: 0; }
+#valign.leave #button,
+#valign.leave #traceTitle,
+#traceTitle.animate,
+#button.animate {
+  color: transparent;
+  filter: blur(.5rem);
+}
+#traceError.animate {
+  color: transparent;
+}
+
+#logo {
+  animation-duration: .3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-name: moby;
+  position: relative;
+  top: 0;
+}
+@keyframes moby { to {
+  top: -.5rem;
+  transform: rotate(-7.5deg);
+} }
