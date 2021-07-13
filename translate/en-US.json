@@ -1,1 +1,8 @@
-
+{
+    "login":       "Sign in",
+    "logout":      "Logout",
+    "login_503":   "We will try to sign you in after.",
+    "logout_503":  "You will be logged out after.",
+    "unavailable": "Service Unavailable.",
+    "retryafter":  "Retry after"
+}
