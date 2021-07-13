@@ -1,5 +1,4 @@
-import { translate, language }
-  from '/translate.js'
+import { translate, language } from './translate.js'
 
 let interval, cancel,
   destination = window.location.origin,
