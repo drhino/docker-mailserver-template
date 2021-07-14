@@ -1,8 +1,14 @@
 {
-    "login":       "Sign in",
-    "logout":      "Logout",
-    "login_503":   "We will try to sign you in after.",
-    "logout_503":  "You will be logged out after.",
-    "unavailable": "Service Unavailable.",
-    "retryafter":  "Retry after"
+  "login":         "Sign in",
+  "logout":        "Logout",
+  "login_503":     "We will try to sign you in after.",
+  "logout_503":    "You will be logged out after.",
+  "unavailable":   "Service Unavailable.",
+  "retryafter":    "Retry after",
+  "please":        "please",
+  "unauthorized":  "Please sign in.",
+  "invaliduser":   "Invalid username.",
+  "invalidpass":   "Invalid password.",
+  "notfound":      "Not Found.",
+  "httpsrequired": "Please use a HTTPS connection."
 }
