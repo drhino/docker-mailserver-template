@@ -12,7 +12,7 @@ const elError = document.getElementById('traceError'),
        button = document.getElementById('button'),
        valign = document.getElementById('valign'),
 
-allowedStatus = [200, 204, 400, 401, 404, 405, 503],
+allowedStatus = [200, 204, 400, 401, 403, 404, 405, 415, 501, 503],
       message = id => {
           try {
               return translate(id)
@@ -49,7 +49,7 @@ requestHandle = () => {
        if (er.status >= 500)
            er.extra = destination.endsWith('/?login') ? message('login_503')
                    : (destination.endsWith('/logout') ? message('logout_503')
-                   : null)
+                   : er.extra)
 
        updateElement(elError, er.stack)
        updateElement(elTitle, er.title)
@@ -69,8 +69,9 @@ responseEvent = response => {
       return setTimeout(() => window.location = window.location.origin, 500)
   }
 
-  const stack = response.headers.get('x-e-trace'),
-        title = response.headers.get('x-e-title')
+  const stack = response.headers.get('x-e-stack'),
+        title = response.headers.get('x-e-title'),
+        extra = response.headers.get('x-e-extra')
 
   seconds = Number(response.headers.get('Refresh-After')) || seconds
 
@@ -79,7 +80,7 @@ responseEvent = response => {
       updateElement(button, message('login'))
   }
 
-  throw { stack, title, status: response.status }
+  throw { stack, title, extra, status: response.status }
 },
 
 // Timer until status code < 500.
