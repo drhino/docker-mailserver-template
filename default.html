@@ -25,12 +25,15 @@
 
 <div id="container">
   <div id="valign">
-    <img id="logo" width="44" height="44" alt="" src="/dmo-logo-white.min.svg">
+    <img id="logo" class="animated" width="44" height="44" alt="" src="/dmo-logo-white.min.svg">
 
-    <!-- message('retryafter') + (int)"s" + message('please')"." -->
-    <small id="traceRetry">Retry after 10s <noscript>please.</noscript></small>
+    <!-- message('retryafter') + (int)"s" -->
+    <small id="traceRetry">Retry after 10s</small>
 
-    <!-- message('login_503') OR message('logout_503') -->
+    <!-- message('login_503') -->
+    <!-- message('logout_503') -->
+    <!-- message('welcome') -->
+    <!-- message('tryagain') -->
     <small id="traceExtra"></small>
 
     <!-- message('unauthorized') -->
@@ -44,7 +47,7 @@
     <!-- message('login') OR message('logout') -->
     <a id="button" href="/?login">Sign in</a>
 
-    <pre id="traceError">Error Stack.</pre>
+    <pre id="traceStack">Error Stack.</pre>
     <hr>
     <small>&copy; 2021-2021</small>
   </div>

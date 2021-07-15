@@ -13,11 +13,11 @@ small {
 
 #button,      small, #logo       { display: block;     }
 #button,      small              { font-size: .75em;   }
-#button, hr + small, #traceError { margin-top: 1rem;   }
+#button, hr + small, #traceStack { margin-top: 1rem;   }
 #button, #traceTitle             { color: #f8f9fa;     } /* white */
               #traceRetry        { margin-top: .25rem; }
               #traceExtra        { margin-top: .1rem;  }
- #traceError, #traceExtra    { transition: color .25s; }
+ #traceStack, #traceExtra    { transition: color .25s; }
 
 #container {
   margin: 0 auto;
@@ -40,7 +40,7 @@ small {
   transition: color .25s, filter .5s;
 }
 
-#traceError {
+#traceStack {
   direction: ltr;
   unicode-bidi: bidi-override;
   color: #f8f9fa;
@@ -75,12 +75,12 @@ small {
   color: transparent;
   filter: blur(.5rem);
 }
-#traceError.animate,
+#traceStack.animate,
 #traceExtra.animate {
   color: transparent;
 }
 
-#logo {
+#logo.animated {
   animation-duration: .3s;
   animation-iteration-count: infinite;
   animation-direction: alternate;

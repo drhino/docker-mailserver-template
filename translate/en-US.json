@@ -5,10 +5,11 @@
   "logout_503":    "You will be logged out after.",
   "unavailable":   "Service Unavailable.",
   "retryafter":    "Retry after",
-  "please":        "please",
   "unauthorized":  "Please sign in.",
   "invaliduser":   "Invalid username.",
   "invalidpass":   "Invalid password.",
   "notfound":      "Not Found.",
-  "httpsrequired": "Please use a HTTPS connection."
+  "httpsrequired": "https:// required.",
+  "welcome":       "Welcome to your mailserver.",
+  "tryagain":      "Please try again."
 }
