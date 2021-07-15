@@ -5,7 +5,7 @@ let interval, cancel,
       seconds = Number(
                 document.getElementById('module').getAttribute('data-seconds')
               )
-const elError = document.getElementById('traceError'),
+const elError = document.getElementById('traceStack'),
       elTitle = document.getElementById('traceTitle'),
       elRetry = document.getElementById('traceRetry'),
       elExtra = document.getElementById('traceExtra'),
